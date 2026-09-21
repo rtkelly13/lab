@@ -1,0 +1,35 @@
+{
+  "name": "@rtkelly13/lab",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Local-first playground for web experiments. Same stack as the blog, nothing deploys.",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "op run --env-file=.env -- next dev",
+    "dev:plain": "next dev",
+    "build": "op run --env-file=.env -- next build",
+    "serve": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "@rtkelly13/design-system": "^0.6.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.6",
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.8",
+    "typescript": "^6.0.3"
+  }
+}

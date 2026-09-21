@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Design-system token contract: role-named @theme tokens, [data-theme] level
+   blocks, polarity variants, and @source for the DS components. */
+@import "@rtkelly13/design-system/theme.css";
+
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  * {
+    border-radius: 0px;
+  }
+}
