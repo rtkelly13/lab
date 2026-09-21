@@ -4,8 +4,9 @@ export default function PhotosFaces() {
       <h2>Plan</h2>
       <ol>
         <li>
-          Index the library once with <code>gphotos-sync --people-search</code>;
-          Google&apos;s existing face clusters come along as per-person albums.
+          Index the library once with <code>gphotos-sync --people-search</code>
+          {'; '}Google&apos;s existing face clusters come along as per-person
+          albums.
         </li>
         <li>
           Query a person by label, download matches, and keep the index local

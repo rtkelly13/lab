@@ -7,10 +7,11 @@ to run experiments on one machine.
 
 ## Invariants
 
-- **Public repo, no committed secrets.** `.env` is committed deliberately and
-  may only contain `op://<Vault>/<Item>/<Field>` references and empty
-  placeholders; `op run` resolves them at launch. Raw values belong in
-  1Password. Never add real credentials to any tracked file.
+- **Public repo, no committed secrets.** `.env` is gitignored and local-only;
+  it may contain only `op://<Vault>/<Item>/<Field>` references (resolved by
+  `op run` at launch), never raw values. `.env.example` is the committed
+  template — keep real vault/item names out of it. Never add credentials,
+  op:// references, or experiment data to any tracked file.
 - **One folder per experiment** at `experiments/<slug>/`, self-contained
   (component, helpers, `.data/` scratch which is gitignored). Register it in
   `lib/experiments.tsx` — that single list drives the index page and the

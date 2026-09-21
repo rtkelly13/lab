@@ -8,8 +8,10 @@
     "pnpm": ">=9.0.0"
   },
   "scripts": {
+    "predev": "node scripts/ensure-env.mjs",
     "dev": "op run --env-file=.env -- next dev",
     "dev:plain": "next dev",
+    "prebuild": "node scripts/ensure-env.mjs",
     "build": "op run --env-file=.env -- next build",
     "serve": "next start",
     "typecheck": "tsc --noEmit",
