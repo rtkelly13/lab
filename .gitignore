@@ -7,9 +7,11 @@
 next-env.d.ts
 *.tsbuildinfo
 
-# local overrides (real values, if you ever bypass op)
+# local env (op:// pointers only — never values; see .env.example)
+.env
 .env.local
 .env.*.local
+!.env.example
 
 # experiment scratch data
 .data/
@@ -23,3 +25,11 @@ next-env.d.ts
 .DS_Store
 npm-debug.log*
 pnpm-debug.log*
+
+# Temporary files, databases, scratch files, and worktrees
+temp/
+.temp/
+
+# Local TODO files
+TODO.md
+todo.md

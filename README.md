@@ -17,16 +17,18 @@ values never touch this checkout.
 
 ```sh
 pnpm install
-pnpm dev        # resolves op:// references in .env, then starts Next
+pnpm dev        # creates .env from .env.example on first run, resolves op:// refs
 pnpm dev:plain  # no-op variant for experiments that need no secrets
 ```
 
 ## Secrets policy
 
-- `.env` is **committed and holds only `op://<Vault>/<Item>/<Field>` pointers**
-  plus empty placeholders. Never put a raw value in it.
-- Anything uncommitted lives in `.env.local` (gitignored) — prefer adding an
-  `op://` reference instead.
+- `.env` is **gitignored** and lives only on this machine. It holds
+  `op://<Vault>/<Item>/<Field>` pointers (resolved by `op run` at launch) —
+  never raw values. It's created automatically from `.env.example` on first
+  `pnpm dev`; fill in references as an experiment needs them.
+- `.env.example` is the committed template: variable names only, with fake or
+  commented-out references — real vault/item names stay out of the public repo.
 - Experiment scratch data (photo dumps, caches) goes in `experiments/<slug>/.data/`
   — gitignored by convention.
 
